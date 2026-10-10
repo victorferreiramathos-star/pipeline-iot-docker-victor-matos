@@ -1,0 +1,150 @@
+{
+  "checked_on": "2026-10-10",
+  "images": [
+    {
+      "file": "01_visao_geral.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-08 163409.png",
+      "page": "Visão geral",
+      "visible_content": "Título, filtros, indicadores e início do gráfico.",
+      "sha256": "5f9aa55ed823490a2115625d6a962ebe3082bb9666970cb8ff0d32b440aa0de9",
+      "bytes": 170588,
+      "width": 1887,
+      "height": 887,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "01_visao_geral_parte_2.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-08 163458.png",
+      "page": "Visão geral",
+      "visible_content": "Evolução diária das médias.",
+      "sha256": "7125cae97f76ac98cacde76bc2b70f6831b96e1ffe9c1aabf377d3d50c4518b1",
+      "bytes": 188058,
+      "width": 1887,
+      "height": 938,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "01_visao_geral_parte_3.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-08 163606.png",
+      "page": "Visão geral",
+      "visible_content": "Quantidade de leituras por ambiente.",
+      "sha256": "a6411df44e17ec6903974f4e1db767249ef72d4675e4365847c0cd834c0b78ad",
+      "bytes": 177520,
+      "width": 1882,
+      "height": 968,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "01_visao_geral_parte_4.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-08 163951.png",
+      "page": "Visão geral",
+      "visible_content": "Tabela e controle de download CSV.",
+      "sha256": "7d149f3e1a8cf161fddc638e288fe7fc5a42d95d0bb5b86a0ef1bd3bbefa157d",
+      "bytes": 215837,
+      "width": 1872,
+      "height": 936,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "02_temperaturas_diarias.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-10 150300.png",
+      "page": "Temperaturas diárias",
+      "visible_content": "Título, filtros, indicadores e início do gráfico.",
+      "sha256": "ec77f3be3558095ec7b701be44f1482db2969e72a8bb3ab52f53a05b55725ea8",
+      "bytes": 191665,
+      "width": 1891,
+      "height": 945,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "02_temperaturas_diarias_parte_2.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-10 150419.png",
+      "page": "Temperaturas diárias",
+      "visible_content": "Gráfico de mínimos e máximos e início da tabela.",
+      "sha256": "6356375cf1c979d7cf3b3ffcc28ec2bcf842fd02b7f7afad942af622019b066f",
+      "bytes": 274097,
+      "width": 1907,
+      "height": 993,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "03_cobertura_leituras.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-10 150653.png",
+      "page": "Cobertura das leituras",
+      "visible_content": "Título, filtros, indicadores e início do gráfico.",
+      "sha256": "cef7c4b7ed3d7d39b3626578bb5d8ff324345b2cac89335c7e2a9ebc70733fde",
+      "bytes": 257880,
+      "width": 1892,
+      "height": 991,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "03_cobertura_leituras_parte_2.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Pictures\\Screenshots\\Captura de tela 2026-10-10 150729.png",
+      "page": "Cobertura das leituras",
+      "visible_content": "Aviso de cobertura, contagem de grupos e tabela.",
+      "sha256": "9f79c12e4c610e2a1e2c96322cf725e2c27a8d30fb80c775a9654dd6b993d7a4",
+      "bytes": 303537,
+      "width": 1902,
+      "height": 990,
+      "verification": "Inspeção visual da captura real; cópia idêntica ao original."
+    },
+    {
+      "file": "04_comparacao_in_out.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Desktop\\Projeto_Pipeline_VicMatos\\docs\\screenshots\\04_comparacao_in_out.png..png",
+      "page": "Comparacao In/Out",
+      "visible_content": "Page confirmed visually; primary and complementary screenshots.",
+      "sha256": "d973f2221f3df1bccc98e0185d85ce7242a1723588aeddb2fb8725b102c9c85d",
+      "bytes": 236018,
+      "width": 1883,
+      "height": 982,
+      "verification": "Real screenshot, byte-identical copy; visual inspection completed."
+    },
+    {
+      "file": "04_comparacao_in_out_parte_2.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Desktop\\Projeto_Pipeline_VicMatos\\docs\\screenshots\\04_comparacao_in_out.png.png",
+      "page": "Comparacao In/Out",
+      "visible_content": "Page confirmed visually; primary and complementary screenshots.",
+      "sha256": "55fa73cc9e59e3f3f558ebee6f4df9cf47162fdc62e50bf6b56d2a7bd5ffa270",
+      "bytes": 246609,
+      "width": 1901,
+      "height": 975,
+      "verification": "Real screenshot, byte-identical copy; visual inspection completed."
+    },
+    {
+      "file": "04_comparacao_in_out_parte_3.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Desktop\\Projeto_Pipeline_VicMatos\\docs\\screenshots\\04_comparacao_in_out.png (2).png",
+      "page": "Comparacao In/Out",
+      "visible_content": "Page confirmed visually; primary and complementary screenshots.",
+      "sha256": "38f9b62665439eb5b499a9f0cca2b7f7f8d089049260b932efc6b4a4e8f6a411",
+      "bytes": 254911,
+      "width": 1907,
+      "height": 962,
+      "verification": "Real screenshot, byte-identical copy; visual inspection completed."
+    },
+    {
+      "file": "05_qualidade_limitacoes.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Desktop\\Projeto_Pipeline_VicMatos\\docs\\screenshots\\05_qualidade_limitacoes.png..png",
+      "page": "Qualidade e limitacoes",
+      "visible_content": "Page confirmed visually; primary and complementary screenshots.",
+      "sha256": "a7062837dd35b163efc475f6eaad3d75b8a5553585fb64b83aacd05502ee4f5e",
+      "bytes": 240062,
+      "width": 1915,
+      "height": 970,
+      "verification": "Real screenshot, byte-identical copy; visual inspection completed."
+    },
+    {
+      "file": "05_qualidade_limitacoes_parte_2.png",
+      "source": "C:\\Users\\Jane\\OneDrive\\Desktop\\Projeto_Pipeline_VicMatos\\docs\\screenshots\\05_qualidade_limitacoes.png.png",
+      "page": "Qualidade e limitacoes",
+      "visible_content": "Page confirmed visually; primary and complementary screenshots.",
+      "sha256": "f30e384cb49064d6c5720462c8bbd3e640160eca06b1cc01aeea4246a7b15456",
+      "bytes": 203973,
+      "width": 1917,
+      "height": 1001,
+      "verification": "Real screenshot, byte-identical copy; visual inspection completed."
+    }
+  ],
+  "missing": [],
+  "limitations": "Capturas parciais de tela, sem montagem, recorte adicional ou edição. Imagens estáticas não comprovam execução de downloads ou interação com filtros."
+}

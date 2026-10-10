@@ -1,0 +1,31 @@
+INDICADORES_BANCO {'count': 97605, 'minimum': 21.0, 'maximum': 51.0, 'mean': 35.0538599456995}
+LINHAS_VIEWS {'daily': 158, 'coverage': 2287, 'gap': 865}
+INDICADORES_FILTRO_IN_01_10_AGOSTO {'count': 575, 'minimum': 27.0, 'maximum': 30.0, 'mean': 28.601739130434783}
+PAGINA_OK Visão geral
+PAGINA_OK Temperaturas diárias
+PAGINA_OK Cobertura das leituras
+PAGINA_OK Comparação In/Out
+PAGINA_OK Qualidade e limitações dos dados
+vw_daily_temperature_summary ROWS 158 SAMPLE {"observation_date": "2018-07-28", "location_name": "Room Admin", "environment": "In", "min_temperature": 31, "max_temperature": 31, "avg_temperature": "31.0000000000000000", "temperature_range": 0, "reading_count": 45}
+vw_hourly_sampling_coverage ROWS 2287 SAMPLE {"observation_date": "2018-07-28", "observation_hour": 7, "location_name": "Room Admin", "environment": "In", "reading_count": 45, "observed_minutes": 7, "minute_coverage_pct": "11.6666666666666667", "has_unobserved_minutes": true, "additional_readings_in_observed_minutes": 38}
+vw_hourly_indoor_outdoor_gap ROWS 865 SAMPLE {"observation_hour": "2018-07-28 07:00:00", "location_name": "Room Admin", "indoor_avg_temperature": "31.0000000000000000", "outdoor_avg_temperature": "31.7906976744186047", "outdoor_minus_indoor": "0.7906976744186047", "indoor_reading_count": 45, "outdoor_reading_count": 43}
+
+test_01_queries_and_full_indicators (test_dashboard.DashboardTests.test_01_queries_and_full_indicators) ... ok
+test_02_filtered_indicators_and_empty (test_dashboard.DashboardTests.test_02_filtered_indicators_and_empty) ... ok
+test_03_all_pages (test_dashboard.DashboardTests.test_03_all_pages) ... 2026-10-10 15:17:14.497 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_04_ui_empty_and_single_environment (test_dashboard.DashboardTests.test_04_ui_empty_and_single_environment) ... 2026-10-10 15:17:32.639 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_05_connection_error_is_safe (test_dashboard.DashboardTests.test_05_connection_error_is_safe) ... 2026-10-10 15:17:34.927 No runtime found, using MemoryCacheStorageManager
+2026-10-10 15:17:34.927 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-10 15:17:36.745 No runtime found, using MemoryCacheStorageManager
+ok
+test_daily_summary (test_views.ViewTests.test_daily_summary) ... ok
+test_hourly_coverage (test_views.ViewTests.test_hourly_coverage) ... ok
+test_hourly_gap_without_multiplication (test_views.ViewTests.test_hourly_gap_without_multiplication) ... ok
+test_source_integrity (test_views.ViewTests.test_source_integrity) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 39.258s
+
+OK

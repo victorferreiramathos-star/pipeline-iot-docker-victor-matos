@@ -1,0 +1,176 @@
+ 
+ 
+1.​ TÍTULO: 
+Pipeline de Dados com IoT e Docker 
+ 
+2.​ DESAFIO:  
+Objetivo: Criar um pipeline de dados que processa leituras de temperatura de 
+dispositivos IoT e armazena em um banco de dados PostgreSQL usando Docker. 
+1. Configuração do GitHub 
+1.​ Crie uma conta no GitHub (https://github.com) 
+2.​ Instale o Git em seu computador 
+3.​ Configure seu nome de usuário e email no Git: 
+git config --global user.name "Seu Nome"​
+git config --global user.email "seu.email@exemplo.com" 
+ 
+2. Comandos Git Básicos 
+Aprenda e utilize os seguintes comandos Git: 
+git init: Inicializa um novo repositório 
+git add .: Adiciona todos os arquivos modificados ao staging 
+git commit -m "Mensagem": Cria um commit com as mudanças 
+git push: Envia as alterações para o repositório remoto 
+git pull: Atualiza seu repositório local com as mudanças do remoto 
+
+ 
+3. Acesso ao Conjunto de Dados do Kaggle 
+1.​ Registre-se no Kaggle (https://www.kaggle.com) 
+2.​ Acesse o conjunto de dados "Temperature Readings: IoT Devices" 
+(https://www.kaggle.com/datasets/atulanandjha/temperature-readings-iot-de
+vices) 
+3.​ Faça o download do arquivo CSV 
+ 
+4. Desenvolvimento do Pipeline de Dados 
+1.​ Configuração do Ambiente: 
+●​ Instale o Python 
+●​ Instale o Docker 
+●​ Crie um ambiente virtual Python 
+●​ Instale as bibliotecas necessárias: 
+pip install pandas psycopg2-binary sqlalchemy streamlit plotly 
+ 
+2.​ Criação do Contêiner PostgreSQL: 
+docker run --name postgres-iot -e POSTGRES_PASSWORD=sua_senha -p 
+5432:5432 -d postgres 
+ 
+3.​ Desenvolvimento da Aplicação Python: 
+●​ Crie um script Python para ler o arquivo CSV 
+●​ Utilize SQLAlchemy para conectar ao PostgreSQL 
+●​ Implemente a lógica para processar e inserir os dados no banco 
+4.​ Criação de Views SQL: 
+●​ Crie pelo menos três views SQL diferentes para representar dados 
+
+ 
+interessantes. Exemplo: 
+ 
+CREATE VIEW avg_temp_por_dispositivo AS​
+SELECT device_id, AVG(temperature) as avg_temp​
+FROM temperature_readings​
+GROUP BY device_id; 
+5.​ Execução e Teste: 
+Execute o script Python para processar e inserir os dados 
+import streamlit as st 
+import pandas as pd​
+import plotly.express as px​
+from sqlalchemy import create_engine​
+​
+# Conexão com o banco de dados​
+engine = create_engine('postgresql://user:password@localhost:5432/database')​
+​
+# Função para carregar dados de uma view​
+def load_data(view_name):​
+    return pd.read_sql(f"SELECT * FROM {view_name}", engine)​
+​
+# Título do dashboard​
+st.title('Dashboard de Temperaturas IoT')​
+​
+
+ 
+# Gráfico 1: Média de temperatura por dispositivo​
+st.header('Média de Temperatura por Dispositivo')​
+df_avg_temp = load_data('avg_temp_por_dispositivo')​
+fig1 = px.bar(df_avg_temp, x='device_id', y='avg_temp')​
+st.plotly_chart(fig1)​
+​
+# Gráfico 2: Contagem de leituras por hora​
+st.header('Leituras por Hora do Dia')​
+df_leituras_hora = load_data('leituras_por_hora')​
+fig2 = px.line(df_leituras_hora, x='hora', y='contagem')​
+st.plotly_chart(fig2)​
+​
+# Gráfico 3: Temperaturas máximas e mínimas por dia​
+st.header('Temperaturas Máximas e Mínimas por Dia')​
+df_temp_max_min = load_data('temp_max_min_por_dia')​
+fig3 = px.line(df_temp_max_min, x='data', y=['temp_max', 'temp_min'])​
+st.plotly_chart(fig3) 
+Verifique se os dados foram inseridos corretamente no PostgreSQL 
+6.​ Execute o dashboard Streamlit: 
+streamlit run dashboard.py 
+ 
+5. Documentação 
+●​ Crie um README.md detalhando o projeto, sua configuração e execução 
+●​ Inclua capturas de tela do dashboard 
+●​ Explique cada view SQL e seu propósito 
+
+ 
+●​ Descreva possíveis insights obtidos dos dados 
+6. Envio para o GitHub 
+1.​ Crie um novo repositório no GitHub 
+2.​ Adicione seus arquivos locais ao repositório: 
+git add .​
+git commit -m "Projeto inicial: Pipeline de Dados IoT"​
+git remote add origin URL_DO_SEU_REPOSITORIO​
+git push -u origin main 
+ 
+# Dica: Mantenha seu código limpo, bem comentado e siga as boas    # práticas 
+de programação Python. 
+ 
+ 
+3.​ FONTE DE PESQUISA: 
+Tutorial para o portfólio - clique aqui 
+ 
+5. ENTREGÁVEL E DISTRIBUIÇÃO DA PONTUAÇÃO:​ 
+Sua entrega final da disciplina Disruptive Architectures: IoT, Big Data e IA será 
+composta por três entregáveis obrigatórios. O objetivo do projeto é desenvolver 
+um pipeline completo de dados com foco em dispositivos IoT, utilizando 
+Python, Docker, PostgreSQL e Streamlit, para processar, armazenar e 
+visualizar dados reais de sensores de temperatura. 
+ 
+
+ 
+1. Parte Teórica – Documentação em PDF  
+Elabore um documento em PDF contendo: 
+●​ Contextualização do projeto: explicação sobre o problema e a proposta do 
+pipeline de IoT; 
+●​ Descrição dos passos realizados (configuração do ambiente, instalação de 
+dependências, criação do container Docker, inserção no banco, criação das 
+views SQL e construção do dashboard); 
+●​ Explicação detalhada das 3 views SQL criadas, indicando o propósito de 
+cada uma; 
+●​ Print das visualizações geradas no Streamlit (gráficos interativos); 
+●​ Principais insights obtidos com os dados e sugestões de uso prático em 
+um ambiente real. 
+2. Parte Prática – Projeto no GitHub 
+Entregue o link para um repositório público no GitHub contendo: 
+●​ Arquivo .py do script Python de processamento e dashboard; 
+●​ Views SQL utilizadas para consulta no PostgreSQL; 
+●​ Docker configurado com PostgreSQL funcional (com instruções no 
+README); 
+●​ README.md bem estruturado, contendo: 
+○​ Explicação do projeto e tecnologias utilizadas; 
+○​ Instruções 
+claras 
+para 
+execução 
+(instalação, 
+comandos, 
+dependências); 
+○​ Capturas de tela do dashboard; 
+○​ Comandos Git utilizados; 
+●​ Base de dados (ou link para download via Kaggle); 
+
+ 
+●​ Código limpo, bem comentado e organizado em pastas (/src, /data, 
+/docs, etc). 
+3. Vídeo Pitch de até 4 minutos 
+Grave um vídeo com até 4 minutos explicando: 
+●​ O propósito e a construção do pipeline; 
+●​ As tecnologias utilizadas (Docker, PostgreSQL, Python, Streamlit); 
+●​ Como os dados foram processados e visualizados; 
+●​ Demonstração funcional do dashboard e principais conclusões. 
+O vídeo deve ser publicado no YouTube (modo público ou não listado) ou em 
+outra rede social.​
+⚠️ Verifique se o link está correto e acessível antes do envio. 
+Esse projeto é uma oportunidade prática para demonstrar sua capacidade de 
+integrar conceitos modernos de IoT, Big Data e Inteligência Artificial, aplicando 
+técnicas de ingestão, armazenamento e análise de dados com foco em soluções 
+reais e escaláveis. Capriche na execução e na apresentação! 
+ 

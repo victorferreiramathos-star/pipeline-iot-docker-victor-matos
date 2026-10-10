@@ -1,0 +1,131 @@
+{
+  "visual_inspection_performed": false,
+  "pages": [
+    {
+      "page": "Visão geral",
+      "titles": [
+        "IoT Thermal Analytics | Victor Matos"
+      ],
+      "exceptions": 0,
+      "errors": 0,
+      "tables": 1,
+      "download_controls": 1,
+      "charts": [
+        {
+          "title": "Evolução diária da temperatura média",
+          "xaxis": "Data",
+          "yaxis": "Temperatura média (unidade não confirmada)",
+          "legend": "Ambiente",
+          "traces": [
+            "In",
+            "Out"
+          ]
+        },
+        {
+          "title": "Quantidade de leituras por ambiente",
+          "xaxis": "Ambiente",
+          "yaxis": "Leituras",
+          "legend": "Ambiente",
+          "traces": [
+            "In",
+            "Out"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "Temperaturas diárias",
+      "titles": [
+        "IoT Thermal Analytics | Victor Matos"
+      ],
+      "exceptions": 0,
+      "errors": 0,
+      "tables": 1,
+      "download_controls": 1,
+      "charts": [
+        {
+          "title": "Evolução diária da temperatura média",
+          "xaxis": "Data",
+          "yaxis": "Temperatura média (unidade não confirmada)",
+          "legend": "Ambiente",
+          "traces": [
+            "In",
+            "Out"
+          ]
+        },
+        {
+          "title": "Temperaturas mínimas e máximas por dia",
+          "xaxis": "Data",
+          "yaxis": "Temperatura (unidade não confirmada)",
+          "legend": "Ambiente, Extremo",
+          "traces": [
+            "In, Mínima",
+            "In, Máxima",
+            "Out, Mínima",
+            "Out, Máxima"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "Cobertura das leituras",
+      "titles": [
+        "IoT Thermal Analytics | Victor Matos"
+      ],
+      "exceptions": 0,
+      "errors": 0,
+      "tables": 1,
+      "download_controls": 1,
+      "charts": [
+        {
+          "title": "Cobertura de minutos por hora observada",
+          "xaxis": "Data e hora (fuso não confirmado)",
+          "yaxis": "Minutos com registros (%)",
+          "legend": "Ambiente",
+          "traces": [
+            "In",
+            "Out"
+          ]
+        }
+      ]
+    },
+    {
+      "page": "Comparação In/Out",
+      "titles": [
+        "IoT Thermal Analytics | Victor Matos"
+      ],
+      "exceptions": 0,
+      "errors": 0,
+      "tables": 1,
+      "download_controls": 1,
+      "charts": [
+        {
+          "title": "Diferença horária entre médias externa e interna",
+          "xaxis": "Data e hora (fuso não confirmado)",
+          "yaxis": "Externa − interna (unidade não confirmada)",
+          "legend": null,
+          "traces": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "page": "Qualidade e limitações dos dados",
+      "titles": [
+        "IoT Thermal Analytics | Victor Matos"
+      ],
+      "exceptions": 0,
+      "errors": 0,
+      "tables": 0,
+      "download_controls": 0,
+      "charts": []
+    }
+  ],
+  "configured_text_contrast": {
+    "#172B3A on #F5F7FA": 13.56,
+    "#172B3A on #E9EFF3": 12.55,
+    "#172B3A on #FFFFFF": 14.55
+  },
+  "checked_at_utc": "2026-10-08T19:41:32+00:00"
+}

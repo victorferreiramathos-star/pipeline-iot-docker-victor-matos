@@ -1,0 +1,40 @@
+# Configuração local e segredos
+.env
+.env.*
+!.env.example
+credentials/
+secrets/
+credentials*.json
+service-account*.json
+service_account*.json
+kaggle.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Ambientes e cache Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Temporários, logs e arquivos do sistema
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+~$*
+logs/
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Credenciais locais do Streamlit
+.streamlit/secrets.toml

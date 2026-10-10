@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-10-08T19:28:47+00:00",
+  "url": "http://127.0.0.1:8501",
+  "http": {
+    "/": {
+      "status": 200,
+      "bytes": 6463
+    },
+    "/_stcore/health": {
+      "status": 200,
+      "bytes": 2,
+      "body": "ok"
+    }
+  },
+  "database_integrity": "total |       content_fingerprint        \n-------+----------------------------------\n 97605 | db628f44918517e86003d1e23d9bcb7b\n(1 row)",
+  "csv_sha256": "2bf965701db96cd5788403d395a25d2dd7282bea24e317b7f7b157b7a02063d4"
+}

@@ -1,0 +1,4 @@
+# Preservar evidências binárias sem conversão de finais de linha pelo Git.
+*.pdf binary
+*.png binary
+data/IOT-temp.csv -text

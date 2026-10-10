@@ -1,0 +1,384 @@
+{
+  "prepared_on": "2026-10-10",
+  "pdf": "relatorio_final_victor_matos.pdf",
+  "sha256": "d04b28029c42d0f024d7e366fab1b916c93fa5d2fe88aefc5ac153adfec332cc",
+  "pages": [
+    {
+      "page": 1,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 704,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 2,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1102,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 3,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1347,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 4,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1470,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 5,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1639,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 6,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 2154,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 7,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1890,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 8,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 2720,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 9,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 3504,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 10,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 2162,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 11,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 2999,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 12,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 2495,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 13,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1549,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 14,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1373,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 15,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 1247,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 16,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 2973,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 17,
+      "width": 595.2755737304688,
+      "height": 841.8897705078125,
+      "text_characters": 466,
+      "images": 0,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 18,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 214,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 19,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 224,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 20,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 221,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 21,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 221,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 22,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 232,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 23,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 221,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 24,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 219,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 25,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 233,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 26,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 237,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 27,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 241,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 28,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 220,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 29,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 223,
+      "images": 1,
+      "no_text_outside_page": true
+    },
+    {
+      "page": 30,
+      "width": 841.8897705078125,
+      "height": 595.2755737304688,
+      "text_characters": 236,
+      "images": 1,
+      "no_text_outside_page": true
+    }
+  ],
+  "figures": [
+    {
+      "page": 18,
+      "file": "screenshots/01_visao_geral.png",
+      "sha256": "5f9aa55ed823490a2115625d6a962ebe3082bb9666970cb8ff0d32b440aa0de9",
+      "dimensions": [
+        1887,
+        887
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 19,
+      "file": "screenshots/01_visao_geral_parte_2.png",
+      "sha256": "7125cae97f76ac98cacde76bc2b70f6831b96e1ffe9c1aabf377d3d50c4518b1",
+      "dimensions": [
+        1887,
+        938
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 20,
+      "file": "screenshots/01_visao_geral_parte_3.png",
+      "sha256": "a6411df44e17ec6903974f4e1db767249ef72d4675e4365847c0cd834c0b78ad",
+      "dimensions": [
+        1882,
+        968
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 21,
+      "file": "screenshots/01_visao_geral_parte_4.png",
+      "sha256": "7d149f3e1a8cf161fddc638e288fe7fc5a42d95d0bb5b86a0ef1bd3bbefa157d",
+      "dimensions": [
+        1872,
+        936
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 22,
+      "file": "screenshots/02_temperaturas_diarias.png",
+      "sha256": "ec77f3be3558095ec7b701be44f1482db2969e72a8bb3ab52f53a05b55725ea8",
+      "dimensions": [
+        1891,
+        945
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 23,
+      "file": "screenshots/02_temperaturas_diarias_parte_2.png",
+      "sha256": "6356375cf1c979d7cf3b3ffcc28ec2bcf842fd02b7f7afad942af622019b066f",
+      "dimensions": [
+        1907,
+        993
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 24,
+      "file": "screenshots/03_cobertura_leituras.png",
+      "sha256": "cef7c4b7ed3d7d39b3626578bb5d8ff324345b2cac89335c7e2a9ebc70733fde",
+      "dimensions": [
+        1892,
+        991
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 25,
+      "file": "screenshots/03_cobertura_leituras_parte_2.png",
+      "sha256": "9f79c12e4c610e2a1e2c96322cf725e2c27a8d30fb80c775a9654dd6b993d7a4",
+      "dimensions": [
+        1902,
+        990
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 26,
+      "file": "screenshots/04_comparacao_in_out.png",
+      "sha256": "d973f2221f3df1bccc98e0185d85ce7242a1723588aeddb2fb8725b102c9c85d",
+      "dimensions": [
+        1883,
+        982
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 27,
+      "file": "screenshots/04_comparacao_in_out_parte_2.png",
+      "sha256": "55fa73cc9e59e3f3f558ebee6f4df9cf47162fdc62e50bf6b56d2a7bd5ffa270",
+      "dimensions": [
+        1901,
+        975
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 28,
+      "file": "screenshots/04_comparacao_in_out_parte_3.png",
+      "sha256": "38f9b62665439eb5b499a9f0cca2b7f7f8d089049260b932efc6b4a4e8f6a411",
+      "dimensions": [
+        1907,
+        962
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 29,
+      "file": "screenshots/05_qualidade_limitacoes.png",
+      "sha256": "a7062837dd35b163efc475f6eaad3d75b8a5553585fb64b83aacd05502ee4f5e",
+      "dimensions": [
+        1915,
+        970
+      ],
+      "embedded_pixels_match": true
+    },
+    {
+      "page": 30,
+      "file": "screenshots/05_qualidade_limitacoes_parte_2.png",
+      "sha256": "f30e384cb49064d6c5720462c8bbd3e640160eca06b1cc01aeea4246a7b15456",
+      "dimensions": [
+        1917,
+        1001
+      ],
+      "embedded_pixels_match": true
+    }
+  ],
+  "orientation_original_sha256": "00542bd5367eabb2ffab03d5dec3759a0f18ef2ce3fb5b742d6d590e78950f73",
+  "csv_sha256_unchanged": "2bf965701db96cd5788403d395a25d2dd7282bea24e317b7f7b157b7a02063d4",
+  "services_started": false,
+  "database_accessed": false,
+  "visual_review": "Completed: all 30 pages inspected in 8 contact sheets; pages 11, 16, 27 and 30 also inspected individually. No relevant layout defect found."
+}

@@ -1,0 +1,37 @@
+{
+  "checked_at_utc": "2026-10-10T18:17:20+00:00",
+  "database": [
+    {
+      "total": 97605,
+      "unique_ids": 97605,
+      "fingerprint": "db628f44918517e86003d1e23d9bcb7b"
+    },
+    {
+      "runs": 3,
+      "completed": 3,
+      "source_rows": 292818,
+      "duplicates": 3,
+      "rejections": 0,
+      "inserted": 97605,
+      "existing": 195210
+    },
+    {
+      "staging_rows": 292818,
+      "rejection_rows": 0
+    }
+  ],
+  "csv_sha256": "2bf965701db96cd5788403d395a25d2dd7282bea24e317b7f7b157b7a02063d4",
+  "manual_visual_review": {
+    "status": "completed_by_user",
+    "relevant_visual_issues_reported": false
+  },
+  "screenshots": [],
+  "/": {
+    "status": 200,
+    "health": "resposta recebida"
+  },
+  "/_stcore/health": {
+    "status": 200,
+    "health": "ok"
+  }
+}

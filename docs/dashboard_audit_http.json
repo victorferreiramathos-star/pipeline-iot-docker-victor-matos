@@ -1,0 +1,17 @@
+{
+  "checked_at_utc": "2026-10-08T19:36:41+00:00",
+  "url": "http://127.0.0.1:8501",
+  "browser_available": false,
+  "visual_inspection_performed": false,
+  "http": {
+    "/": {
+      "status": 200,
+      "bytes": 6463
+    },
+    "/_stcore/health": {
+      "status": 200,
+      "bytes": 2,
+      "body": "ok"
+    }
+  }
+}

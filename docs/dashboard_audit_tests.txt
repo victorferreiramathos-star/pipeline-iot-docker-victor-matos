@@ -1,0 +1,24 @@
+INDICADORES_BANCO {'count': 97605, 'minimum': 21.0, 'maximum': 51.0, 'mean': 35.0538599456995}
+LINHAS_VIEWS {'daily': 158, 'coverage': 2287, 'gap': 865}
+INDICADORES_FILTRO_IN_01_10_AGOSTO {'count': 575, 'minimum': 27.0, 'maximum': 30.0, 'mean': 28.601739130434783}
+PAGINA_OK Visão geral
+PAGINA_OK Temperaturas diárias
+PAGINA_OK Cobertura das leituras
+PAGINA_OK Comparação In/Out
+PAGINA_OK Qualidade e limitações dos dados
+
+test_01_queries_and_full_indicators (test_dashboard.DashboardTests.test_01_queries_and_full_indicators) ... ok
+test_02_filtered_indicators_and_empty (test_dashboard.DashboardTests.test_02_filtered_indicators_and_empty) ... ok
+test_03_all_pages (test_dashboard.DashboardTests.test_03_all_pages) ... 2026-10-08 16:40:54.636 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_04_ui_empty_and_single_environment (test_dashboard.DashboardTests.test_04_ui_empty_and_single_environment) ... 2026-10-08 16:41:14.624 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_05_connection_error_is_safe (test_dashboard.DashboardTests.test_05_connection_error_is_safe) ... 2026-10-08 16:41:17.414 No runtime found, using MemoryCacheStorageManager
+2026-10-08 16:41:17.485 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-08 16:41:18.092 No runtime found, using MemoryCacheStorageManager
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 34.252s
+
+OK
