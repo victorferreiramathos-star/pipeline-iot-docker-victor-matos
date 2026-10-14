@@ -7,7 +7,7 @@
 
 Construir um pipeline em Python para processar leituras reais de temperatura de dispositivos IoT, armazená-las no PostgreSQL e apresentar análises em um dashboard Streamlit.
 
-## Estado atual
+## Apresentação
 
 Ingestão, três views e dashboard Streamlit implementados. O dashboard consulta somente as views reais e não altera registros. As cinco páginas possuem capturas reais em `docs/screenshots`, e o [relatório acadêmico final](docs/relatorio_victor_matos_compacto.pdf) contém 18 páginas revisadas, com cinco capturas principais e oito complementares. Os quatro CSVs passaram em 16 verificações automatizadas; o download e a abertura manual pelo navegador continuam pendentes.
 
@@ -30,7 +30,8 @@ Projeto_Pipeline_VicMatos/
 ├── dashboard.py
 ├── src/
 │   ├── __init__.py
-│   └── ingest.py
+│   ├── ingest.py
+│   └── dashboard_data.py
 ├── sql/
 │   └── views.sql
 ├── data/
@@ -45,9 +46,16 @@ Projeto_Pipeline_VicMatos/
 
 Fonte: [Temperature Readings: IoT Devices, no Kaggle](https://www.kaggle.com/datasets/atulanandjha/temperature-readings-iot-devices). O arquivo original `data/IOT-temp.csv` contém 97.606 linhas e uma duplicata exata. A ingestão verifica seu SHA-256 antes de carregar. Nenhum registro do CSV é modificado.
 
-## Configuração prevista
+## Instalação e configuração
 
-O arquivo `.env.example` documenta as variáveis de ambiente. A instalação local já utiliza `.env` com credenciais próprias. Em outra máquina, crie sua cópia local e defina uma senha própria para `POSTGRES_PASSWORD`. Não publique esse arquivo.
+Execute os comandos na raiz do projeto, com Python e Docker Desktop disponíveis. Crie um ambiente virtual e instale as dependências:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+O arquivo `.env.example` documenta as variáveis de ambiente. Crie uma cópia local chamada `.env` e defina uma senha própria para `POSTGRES_PASSWORD`. O `.env` contém credenciais e deve permanecer fora do versionamento.
 
 O Compose prepara PostgreSQL 16 com volume persistente, healthcheck e porta local configurável por `POSTGRES_PORT` (padrão 5432). A porta é vinculada a `127.0.0.1`. Aplicações executadas no Windows usarão `POSTGRES_HOST=localhost`.
 
@@ -59,20 +67,17 @@ docker --context desktop-linux compose up -d postgres
 docker --context desktop-linux compose ps
 ```
 
-Aguarde o estado `healthy` antes de executar ingestão ou dashboard. Após reiniciar esta máquina, o contêiner existente pode ser retomado com `docker --context desktop-linux start projeto_pipeline_vicmatos-postgres-1`, preservando o volume. Não remova o volume para reiniciar o projeto. O `.env.example` não contém senha utilizável: a configuração precisa de uma senha local definida.
+Aguarde o estado `healthy` antes de executar ingestão ou dashboard. Para retomar um contêiner existente sem recriá-lo, use `docker --context desktop-linux compose start postgres`. O volume persistente conserva os dados entre reinicializações e não deve ser removido para retomar o projeto. O `.env.example` exige uma senha local definida.
 
 ## Executar a ingestão
 
 Com PostgreSQL deste projeto disponível e `.env` local configurado:
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install pandas sqlalchemy psycopg2-binary
 .\.venv\Scripts\python.exe -m src.ingest
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-As três bibliotecas já constam de `requirements.txt`; não é preciso instalar as bibliotecas do dashboard nesta etapa. Execute os comandos na raiz do projeto. As credenciais são lidas exclusivamente do `.env`, sem usar variáveis globais ou imprimi-las.
+As credenciais são lidas exclusivamente do `.env`, sem usar variáveis globais ou imprimi-las.
 
 A carga cria `audit.ingestion_runs`, `audit.ingestion_rejections`, `staging.temperature_raw` e `iot.temperature_readings`. Staging preserva nomes e valores originais, com número da linha e identificador da execução. Datas usam `%d-%m-%Y %H:%M`; temperaturas precisam ser inteiras representáveis em SMALLINT; ambientes aceitos: `In` e `Out`. Não se assume unidade térmica ou fuso não documentado.
 
@@ -80,7 +85,11 @@ Cada execução bem-sucedida preserva todas as linhas no staging, contabiliza du
 
 A reconciliação é: **origem = duplicatas + rejeições + inseridos + já existentes**. Um bloqueio transacional serializa as cargas. DDL, staging, rejeições, dados tratados e conclusão da auditoria são confirmados juntos; falhas técnicas revertem a execução inteira, inclusive seu registro de auditoria. A linha de comando retorna erro sem revelar detalhes sensíveis. Cargas técnicas que falham não deixam registro persistente de falha nesta versão.
 
-Os testes executam duas cargas oficiais e verificam conteúdo integral, auditoria e idempotência. Casos inválidos e conflitos usam cópias em memória de registros reais, dentro de transações revertidas; não alteram o CSV nem deixam dados de teste no banco. Use exclusivamente o banco deste projeto.
+Os testes de ingestão executam duas cargas oficiais e verificam conteúdo integral, auditoria e idempotência. Casos inválidos e conflitos usam cópias em memória de registros reais, dentro de transações revertidas; não alteram o CSV nem deixam dados de teste no banco. As cargas oficiais acrescentam staging e auditoria, portanto esses testes exigem um banco dedicado ao projeto:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_ingest.py -v
+```
 
 ## Views analíticas
 
@@ -103,7 +112,7 @@ O segundo comando testa apenas as views; não reexecuta a ingestão. `CREATE OR 
 
 A diferença é **média externa menos média interna**: positiva indica média externa maior. As duas médias são calculadas separadamente por local e hora, antes da subtração, sem JOIN entre observações brutas. Horas com apenas um ambiente são excluídas da comparação. As leituras não são necessariamente simultâneas dentro da hora, nem têm frequências iguais; a diferença não estabelece causalidade.
 
-As médias são ponderadas por leituras, não pelo tempo transcorrido. O dataset identifica um local (`Room Admin`) e ambientes `In`/`Out`, mas **não identifica sensores físicos individuais**. A unidade térmica e o fuso horário não foram confirmados: não rotular como graus Celsius nem converter fusos sem evidência da fonte. Não há arredondamento no SQL; a apresentação poderá arredondar os resultados depois.
+As médias são ponderadas por leituras, não pelo tempo transcorrido. O dataset identifica um local (`Room Admin`) e ambientes `In`/`Out`, mas **não identifica sensores físicos individuais**. A unidade térmica e o fuso horário não foram confirmados; por isso, a aplicação não atribui Celsius aos valores nem converte o fuso das observações. Não há arredondamento no SQL; os indicadores do dashboard arredondam os valores para apresentação.
 
 As views não definem ordenação. Exemplos de consultas de validação ordenadas:
 
@@ -147,7 +156,7 @@ Testes exclusivos do dashboard, sem repetir ingestão nem modificar as views:
 
 O dataset não identifica sensores individuais. Unidade térmica e fuso não foram confirmados; temperaturas não são rotuladas em Celsius. Cobertura mede minutos com registros, não disponibilidade comprovada. Médias horárias de In/Out não implicam simultaneidade ou causalidade.
 
-Evidências reais: [docs/dashboard_validation.md](docs/dashboard_validation.md), saída dos cinco testes em `docs/dashboard_test_results.txt` e verificação HTTP/integridade em `docs/dashboard_http_validation.json`. Todas as páginas foram exercitadas por AppTest. Em 10/10/2026, o usuário confirmou a revisão visual manual das cinco páginas, sem problemas relevantes. O agente conferiu os cinco PNGs, suas páginas e a incorporação das imagens ao PDF. Nenhuma captura fictícia foi criada. Resultados de execução são históricos e não garantem que os serviços estejam ativos após reiniciar o computador.
+As cinco páginas foram exercitadas por AppTest e revisadas visualmente. As evidências incluem a [validação do dashboard](docs/dashboard_validation.md), os [resultados dos cinco testes](docs/dashboard_test_results.txt) e a [verificação HTTP e de integridade](docs/dashboard_http_validation.json). Esses registros documentam as execuções realizadas; para acessar a aplicação local, PostgreSQL e Streamlit devem estar em execução.
 
 | Página | Captura real |
 |---|---|
@@ -159,11 +168,11 @@ Evidências reais: [docs/dashboard_validation.md](docs/dashboard_validation.md),
 
 Capturas complementares e hashes estão no [inventário visual](docs/screenshots/README.md). Os [resultados de exportação CSV](docs/visual_csv_validation.json) confirmam UTF-8 com BOM, cabeçalhos, contagens e filtros contra consultas independentes. Falta conferir manualmente os quatro downloads no navegador.
 
-Os dados mostram amostragem irregular: 2.265 dos 2.287 grupos horários possuem menos de 60 minutos observados. Isso não comprova indisponibilidade do sensor. As 865 horas com ambos os ambientes permitem analisar a diferença externa menos interna; médias por registros não garantem simultaneidade ou causalidade. Insights e aplicações propostas estão no [relatório](docs/relatorio_final_victor_matos.md).
+Os dados mostram amostragem irregular: 2.265 dos 2.287 grupos horários possuem menos de 60 minutos observados. Isso não comprova indisponibilidade do sensor. As 865 horas com ambos os ambientes permitem analisar a diferença externa menos interna; médias por registros não garantem simultaneidade ou causalidade. Insights e aplicações propostas estão no [relatório final compacto](docs/relatorio_victor_matos_compacto.pdf).
 
 ## Versionamento e conferência final
 
-Comandos já utilizados nesta máquina: `git --version`, `git init -b main`, configuração **local** da identidade de Victor Matos, `git status`, `git check-ignore` e `git ls-files`. Não houve commits, push ou publicação, e não há remoto configurado no repositório local na conferência de 10/10/2026. Conectar o remoto e publicar continuam dependendo de autorização.
+O projeto está publicado no [repositório público de Victor Matos](https://github.com/victorferreiramathos-star/pipeline-iot-docker-victor-matos), na branch `main`. O versionamento utilizou `git init -b main`, configuração local de identidade, `git status`, `git check-ignore`, `git ls-files`, `git add`, `git commit`, `git remote add origin` e `git push`. O `.gitignore` protege credenciais, ambientes virtuais, caches e temporários; o `.gitattributes` preserva os arquivos PDF, PNG e os bytes originais do CSV.
 
 Para repetir apenas os testes de views e dashboard, sem gravar cargas no banco:
 
@@ -171,17 +180,4 @@ Para repetir apenas os testes de views e dashboard, sem gravar cargas no banco:
 .\.venv\Scripts\python.exe -B -m unittest discover -s tests -p 'test_[dv]*.py' -v
 ```
 
-Não use o comando de descoberta de **todos** os testes quando a etapa permitir somente leitura: os testes de ingestão criam cargas de auditoria. A conferência final de 10/10/2026 executou nove testes de leitura com sucesso e confirmou 97.605 IDs únicos, fingerprint preservado e três cargas concluídas. Veja [docs/final_delivery_checklist.md](docs/final_delivery_checklist.md).
-
-## Próximas entregas
-
-- Manter as validações e a rastreabilidade da ingestão do CSV real.
-- Manter as três views e seus testes de agregação.
-- Manter o dashboard e seus testes de consultas e filtros.
-- Completar as instruções de execução e registrar os comandos Git utilizados.
-- Entregar o [PDF acadêmico concluído](docs/relatorio_victor_matos_compacto.pdf), com etapas, views, capturas reais e insights.
-- Confirmar manualmente os downloads CSV no navegador.
-- Preparar o vídeo pitch de até quatro minutos.
-- Publicar o repositório e verificar os links somente mediante autorização.
-
-Pastas vazias existem localmente, mas não são versionadas pelo Git até receberem arquivos.
+A suíte de leitura reúne quatro testes das views e cinco do dashboard. Os nove testes foram aprovados, com 97.605 IDs únicos e integridade preservada. A descoberta de todos os testes também inclui a ingestão, que grava cargas de auditoria; para verificar o projeto sem essas gravações, utilize o comando acima. Os [resultados da suíte de leitura](docs/final_evidence_tests.txt) e a [conferência de integridade](docs/final_integrity_check.json) documentam as validações.
