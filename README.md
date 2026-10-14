@@ -9,7 +9,7 @@ Construir um pipeline em Python para processar leituras reais de temperatura de 
 
 ## Estado atual
 
-Ingestão, três views e dashboard Streamlit implementados. O dashboard consulta somente as views reais e não altera registros. As cinco páginas possuem capturas reais em `docs/screenshots`, e o [relatório acadêmico final](docs/relatorio_final_victor_matos.pdf) contém 30 páginas revisadas, com cinco capturas principais e oito complementares. Os quatro CSVs passaram em 16 verificações automatizadas; o download e a abertura manual pelo navegador continuam pendentes.
+Ingestão, três views e dashboard Streamlit implementados. O dashboard consulta somente as views reais e não altera registros. As cinco páginas possuem capturas reais em `docs/screenshots`, e o [relatório acadêmico final](docs/relatorio_victor_matos_compacto.pdf) contém 18 páginas revisadas, com cinco capturas principais e oito complementares. Os quatro CSVs passaram em 16 verificações automatizadas; o download e a abertura manual pelo navegador continuam pendentes.
 
 ## Tecnologias
 
@@ -179,7 +179,7 @@ Não use o comando de descoberta de **todos** os testes quando a etapa permitir 
 - Manter as três views e seus testes de agregação.
 - Manter o dashboard e seus testes de consultas e filtros.
 - Completar as instruções de execução e registrar os comandos Git utilizados.
-- Entregar o [PDF acadêmico concluído](docs/relatorio_final_victor_matos.pdf), com etapas, views, capturas reais e insights.
+- Entregar o [PDF acadêmico concluído](docs/relatorio_victor_matos_compacto.pdf), com etapas, views, capturas reais e insights.
 - Confirmar manualmente os downloads CSV no navegador.
 - Preparar o vídeo pitch de até quatro minutos.
 - Publicar o repositório e verificar os links somente mediante autorização.
